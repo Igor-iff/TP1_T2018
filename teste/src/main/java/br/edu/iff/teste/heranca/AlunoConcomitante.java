@@ -9,9 +9,11 @@ public class AlunoConcomitante extends Aluno {
     long matriculaEM;
     String escolaEM;
     boolean apresentouCertificadoEM;
+    boolean concluiuocurso;
+    boolean documentacaodamatricula;
     
     public boolean podeSolicitarDiploma() {
-        if (apresentouCertificadoEM) {
+        if (apresentouCertificadoEM && documentacaodamatricula && concluiuocurso) {
             return true;
         } else {
             return false;
