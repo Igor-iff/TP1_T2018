@@ -14,7 +14,9 @@ public class Aluno {
     Date dtNascimento;
     long matricula, rendaFamiliar;
     Endereco endResidencial;
-    
+    boolean concluiuocurso;
+    boolean documentacaodamatricula;
+
     public int idade() {
         Date hoje = new Date();
         int anos = hoje.getYear() - dtNascimento.getYear();
@@ -29,6 +31,15 @@ public class Aluno {
             }
         } else {
             return anos;
+        }
+    }
+
+    public boolean podeSolicitarDiploma() {
+        if (documentacaodamatricula && concluiuocurso ) {
+            
+            return true;
+        } else {
+            return false;
         }
         
     }
